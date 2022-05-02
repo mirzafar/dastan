@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мастер класс</title>
+    <link rel="stylesheet" href="/media/css/style-video.css">
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/fontawesome.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/fontawesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/style.css" type="text/css">
+</head>
+<body>
+<div class="container mg-bottom">
+    <div class="text-left">
+{#        <a class="w3-left ws-btn" href="/">❮ Назад</a>#}
+        <a href="/" class="btn-primary1" role="button" aria-pressed="true">❮ Назад</a>
+    </div>
+</div>
+{% for vd in videos %}
+<div class="container mg-bottom">
+    <div class="text-center">
+        <div style="width: 90%; display: inline-flex; flex-direction: column;">
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/{{ vd.link_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="" style="width: 100%; background: #A9A9A9;padding-top: 10px;">
+                <p class="text-center v-p">{{ vd.title }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<footer style="margin-top: 150px" class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-newslatter">
+                            <h6>New latest</h6>
+                            <p>Оставьте свою электронную почту и получите в подарок аудиокнигу.</p>
+                            <form action="#" class="fn-form">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="/obuchenie">Дайындалу</a></li>
+                            <li><a href="/masterklass">Мастер класс</a></li>
+                            <li><a href="https://ticketon.kz/">Билет алу</a></li>
+                            <li><a href="/contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="/media/js/jquery-3.3.1.min.js"></script>
+<script src="/media/js/bootstrap.min.js"></script>
+<script src="/media/js/jquery.magnific-popup.min.js"></script>
+<script src="/media/js/jquery.nice-select.min.js"></script>
+<script src="/media/js/jquery-ui.min.js"></script>
+<script src="/media/js/jquery.slicknav.js"></script>
+<script src="/media/js/owl.carousel.min.js"></script>
+<script src="/media/js/main.js"></script>
+<script src="/media/js/js-contact.js"></script>
+
+</body>
+</html>

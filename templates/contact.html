@@ -1,0 +1,133 @@
+<html lang="zxx"><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sona | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/fontawesome.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/fontawesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/style-video.css">
+</head>
+
+<body>
+
+    <section class="contact-section spad">
+        <div class="container mg-bottom">
+            <div class="text-left">
+        {#        <a class="w3-left ws-btn" href="/">❮ Назад</a>#}
+                <a href="/" class="btn-primary1" role="button" aria-pressed="true">❮ Назад</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-text">
+                        <h2>Контакты</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">Адрес:</td>
+                                    <td>{{ infos.adress }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Телефон:</td>
+                                    <td>{{ infos.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Email:</td>
+                                    <td>{{ infos.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Fax:</td>
+                                    <td>{{ infos.fax }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-7 offset-lg-1">
+                    <form action="/contact/" id="form5" class="contact-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" name="name" placeholder="Your Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" name="email" placeholder="Your Email">
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea name="description" placeholder="Your Message"></textarea>
+                                <input type="hidden" name="action" value="send">
+                                <button type="submit">отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-newslatter">
+                            <h6>New latest</h6>
+                            <p>Оставьте свою электронную почту и получите в подарок аудиокнигу.</p>
+                            <form action="#" class="fn-form">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="/obuchenie">Дайындалу</a></li>
+                            <li><a href="/masterklass">Мастер класс</a></li>
+                            <li><a href="https://ticketon.kz/">Билет алу</a></li>
+                            <li><a href="/contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/media/js/jquery-3.3.1.min.js"></script>
+    <script src="/media/js/bootstrap.min.js"></script>
+    <script src="/media/js/jquery.magnific-popup.min.js"></script>
+    <script src="/media/js/jquery.nice-select.min.js"></script>
+    <script src="/media/js/jquery-ui.min.js"></script>
+    <script src="/media/js/jquery.slicknav.js"></script>
+    <script src="/media/js/owl.carousel.min.js"></script>
+    <script src="/media/js/main.js"></script>
+    <script src="/media/js/js-contact.js"></script>
+
+
+</body></html>

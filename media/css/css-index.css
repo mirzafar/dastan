@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 20px 0;
+}
+.btn-primary1{
+    color: #fff;
+    border-color: #007bff;
+}
+.c-tc-img{
+    width: 70%;
+}
+.mg-bottom{
+  margin-bottom: 15px;
+}
+.v-p{
+
+}
+.btn-primary2{
+  padding: 10px 20px;
+  background-color: #222736;
+  color: white;
+  border-radius: 5px;
+}

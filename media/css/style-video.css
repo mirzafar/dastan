@@ -1,0 +1,16 @@
+body{
+  margin: 0;
+  padding: 20px 0;
+}
+.mg-bottom{
+  margin-bottom: 15px;
+}
+.v-p{
+
+}
+.btn-primary1{
+  padding: 10px 20px;
+  background-color: #222736;
+  color: white;
+  border-radius: 5px;
+}

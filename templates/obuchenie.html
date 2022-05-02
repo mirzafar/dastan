@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/media/css/css-index.css">
+{#    <link rel="stylesheet" href="/media/css/style-video.css">#}
+</head>
+<body>
+<div class="container mg-bottom">
+    <div class="text-left">
+        <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ Назад</a>
+    </div>
+</div>
+<div class="container">
+    <div class="text-center">
+        {% for ct in categorys %}
+        <button type="button" class="btn btn-primary1 btn-lg btn-block"><a href="{{ ct.id }}">{{ ct.title }}</a></button>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
