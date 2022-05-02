@@ -5,6 +5,19 @@ class Category(models.Model):
     status = models.IntegerField(default=0, blank=True, verbose_name="Статус")
 
     class Meta:
+        verbose_name = "мимика"
+        verbose_name_plural = "мимика"
+
+    def __str__(self):
+        return self.title
+
+
+class Category2(models.Model):
+    title = models.CharField(max_length=500, blank=True, verbose_name="Название")
+    description = models.TextField(blank=True, verbose_name="Описание")
+    status = models.IntegerField(default=0, blank=True, verbose_name="Статус")
+
+    class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категория"
 

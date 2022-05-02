@@ -27,6 +27,7 @@ urlpatterns = [
     path('obuchenie/', obuchenieHandler),
     path('api/upload/', apiUploadHandler),
     path('obuchenie/<int:obuchenie_id>', obuchenieIdHandler),
+    path('obuchenie/category/<int:category_id>', categoryHandler),
     re_path(r'^media/(?P<path>.*)$', serve, {
         'document_root': settings.MEDIA_ROOT
     })

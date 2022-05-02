@@ -6,6 +6,15 @@ body{
     color: #fff;
     border-color: #007bff;
 }
+.btn-primary6{
+    color: #fff;
+    border-color: #007bff;
+}
+.btn-primary6:hover{
+    color: #fff;
+    background-color: #007bffe0;
+    border-color: #007bff;
+}
 .c-tc-img{
     width: 70%;
 }

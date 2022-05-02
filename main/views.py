@@ -56,7 +56,13 @@ def contactHandler(request):
 
 def obuchenieHandler(request):
     categorys = Category.objects.all()
-    return render(request, 'obuchenie.html', {"categorys": categorys})
+    ctg = Category2.objects.all()
+    return render(request, 'obuchenie.html', {"categorys": categorys, "ctg": ctg})
+
+
+def categoryHandler(request, category_id):
+    posts = Category2.objects.get(id=int(category_id))
+    return render(request, 'ctg.html', {"posts": posts})
 
 
 def obuchenieIdHandler(request, obuchenie_id):
