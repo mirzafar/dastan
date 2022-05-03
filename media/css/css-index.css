@@ -5,6 +5,11 @@ body{
     /*background-position: center;*/
     /*background-size: cover;*/
 }
+.bg-fon{
+    background-image: url("/media/images/oboi.png");
+    background-position: center;
+    background-size: cover;
+}
 .btn-primary1{
     color: #fff;
     border-color: #007bff;

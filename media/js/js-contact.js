@@ -9,7 +9,7 @@ $(document).ready(function() {
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert("Данные отправлены!!!");
+                     alert("Сатти жиберилди!!!");
                      location.reload()
                  }else{
                      var errors = d['errors'];
@@ -17,7 +17,7 @@ $(document).ready(function() {
                  }
              },
              error: function (d){
-                 alert("не заполнено");
+                 alert("Агылшынша толдырынгыз");
              }
          });
     });

@@ -1,99 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="/media/js/cropper-js/jquery.js"></script>
-    <script src="/media/js/cropper-js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/media/css/cropper-css/bootstrap.min.css">
+{% extends 'base.html' %}
+{% block title %}Мастерклассы{% endblock %}
+{% block style %}
     <link rel="stylesheet" href="/media/css/cropper-css/css-cropper.css">
     <link rel="stylesheet" href="/media/css/cropper-css/cropper.css">
     <link rel="stylesheet" href="/media/css/cropper-css/dropzone.css">
-    <script src="/media/js/cropper-js/cropper.js"></script>
-    <script src="/media/js/cropper-js/bootstrap.min.js"></script>
-    <script src="/media/js/cropper-js/js-dropzone.js"></script>
-    <script src="/media/js/cropper-js/js-cropper.js"></script>
     <link rel="stylesheet" href="/media/css/css-index.css">
-</head>
-<body>
-<nav class="navbar navbar-dark bg-dark mrg-bt">
-    <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ Назад</a>
-</nav>
-    <form action="/obuchenie/{{ posts.id }}" method="POST" id="form1">
-    {% csrf_token %}
-        <div class="container">
-            <div class="text-center">
-                <div style="width: 80%">
-                    <table style="width: 100%">
-
-            <tr>
-                <td></td>
-                <td><input type="hidden" value="{{ posts.id }}" name="id"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td>
-                    <div class="container" align="center">
-
-                        <div class="row">
-                            <div class="col-md-4">&nbsp;</div>
-                            <div class="">
-                                <div class="image_area">
-                                    <form method="post">
-                                        <label for="upload_image">
-                                            <img src="/media/images/usr.jpg" id="uploaded_image" class="img-responsive img-circle" />
-                                            <div class="overlay">
-                                                <div class="text">Добавить</div>
-                                            </div>
-                                            <input type="file" name="image" class="image" id="upload_image" style="display:none" />
-                                        </label>
-                                    </form>
-                                </div>
-                            </div>
-                        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Crop Image Before Upload</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="img-container">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <img src="" id="sample_image" />
+{% endblock %}
+{% block container %}
+    <nav class="navbar navbar-dark bg-dark mrg-bt">
+        <a href="/mimika" class="btn-primary2" role="button" aria-pressed="true">❮ Назад</a>
+    </nav>
+    <div class="pd-bt">
+        <form action="/mimika/{{ posts.id }}" method="POST" id="form9">
+        {% csrf_token %}
+            <div class="container">
+                <div class="text-center">
+                    <div style="width: 80%">
+                        <table style="width: 100%">
+                            <tr>
+                                <td></td>
+                                <td><input type="hidden" value="{{ posts.id }}" name="id"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="container" align="center">
+                                        <div class="row">
+                                            <div class="col-md-4">&nbsp;</div>
+                                            <div class="">
+                                                <div class="image_area">
+                                                    <form method="post">
+                                                        <label for="upload_image">
+                                                            <input type="hidden" name="logo" value="">
+                                                            <img src="/media/images/usr.jpg" id="uploaded_image" class="img-responsive img-circle" />
+                                                            <div class="overlay">
+                                                                <div class="text">Добавить</div>
+                                                            </div>
+                                                            <input type="file" name="image" class="image" id="upload_image" style="display:none" />
+                                                        </label>
+                                                    </form>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <div class="preview"></div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Crop Image Before Upload</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="img-container">
+                                                            <div class="row">
+                                                                <div class="col-md-8">
+                                                                    <img src="" id="sample_image" />
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="preview"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" id="crop" class="btn btn-primary">Обрезать</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" id="crop" class="btn btn-primary">Обрезать</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="hidden" name="action" value="add"></td>
+                                <td><button>Проверить</button></td>
+                            </tr>
+                        </table>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <tr>
-                    <td><input type="hidden" name="action" value="add"></td>
-                    <td><button>Проверить</button></td>
-                </tr>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="footer-section fixed-bottom">
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="/obuchenie">Дайындалу</a></li>
+                            <li><a href="/masterklass">Мастер класс</a></li>
+                            <li><a href="https://ticketon.kz/">Билет алу</a></li>
+                            <li><a href="/contact">Контакттар</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </footer>
 
-    </form>
+{% endblock %}
+{% block script %}
+    <script src="/media/js/cropper-js/jquery.js"></script>
+    <script src="/media/js/cropper-js/jquery.min.js"></script>
+    <script src="/media/js/cropper-js/cropper.js"></script>
+    <script src="/media/js/cropper-js/bootstrap.min.js"></script>
+    <script src="/media/js/cropper-js/js-dropzone.js"></script>
+    <script src="/media/js/cropper-js/js-cropper.js"></script>
     <script>
 
     $(document).ready(function(){
@@ -165,13 +179,13 @@
         });
 
     });
-    $("#form1").submit(function (e) {
+    $("#form9").submit(function (e) {
         e.preventDefault();
         var serializedData = $(this).serialize();
          $.ajax({
              type: 'POST',
              dataType: 'json',
-             url: $("#form1").attr("action"),
+             url: $("#form9").attr("action"),
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
@@ -188,5 +202,4 @@
          });
     });
 </script>
-</body>
-</html>
+{% endblock %}

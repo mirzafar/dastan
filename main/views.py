@@ -30,17 +30,18 @@ def contactHandler(request):
     if request.POST:
         action = request.POST.get('action', '')
         name = request.POST.get('name', '')
-        email = request.POST.get('email', '')
+        ema1l = request.POST.get('email', '')
         description = request.POST.get('description', '')
+
         if action == 'send':
             sm = SendMessage()
             if name:
                 sm.name = name
             else:
                 errors.append("Name not found")
-            if email:
-                if email_regex.match(email):
-                    sm.email = email
+            if ema1l:
+                if email_regex.match(ema1l):
+                    sm.email = ema1l
                 else:
                     errors.append("Check again email")
             else:
@@ -51,6 +52,35 @@ def contactHandler(request):
                 errors.append("Description not found")
             if not errors:
                 sm.save()
+
+                email = 'u5ad44in@yandex.ru'
+                password = '010100Aa#'
+                dest_email = ['m_mirzafar@mail.ru']
+
+                subject = 'novoe soobshenie'
+                email_text = f'description: {sm.description}\n email: {sm.email} '
+
+                message = 'From: {}\nSubject: {}\n\n{}'.format(email, subject, email_text)
+
+                server = smtp.SMTP_SSL('smtp.yandex.com')
+                server.set_debuglevel(1)
+                server.ehlo(email)
+                server.login(email, password)
+                server.sendmail(email, dest_email, message)
+                server.quit()
+
+                subject = 'Rahmet'
+                email_text = f'Sizding hatiniz kabyldandy, siz ben tez arada baylanysamyz!!!'
+
+                message = 'From: {}\nSubject: {}\n\n{}'.format(email, subject, email_text)
+
+                server = smtp.SMTP_SSL('smtp.yandex.com')
+                server.set_debuglevel(1)
+                server.ehlo(email)
+                server.login(email, password)
+                server.sendmail(email, [sm.email], message)
+                server.quit()
+
                 response = JsonResponse({'status': True}, status=200)
             else:
                 response = JsonResponse({'status': False, 'errors': errors}, status=200)
@@ -83,11 +113,14 @@ def mimikaBlogHandler(request, obuchenie_id):
     errors = []
     if request.POST:
         action = request.POST.get('action', '')
-        logo = request.POST.get('image', '')
+        logo = request.POST.get('logo', '')
         ctg_id = int(request.POST.get('id', 0))
         if action == 'add':
             cc = Grade()
-            cc.photo = logo
+            if logo:
+                cc.photo = logo
+            else:
+                errors.append("Logo not found")
             cc.ball = b
             cc.category_id = ctg_id
             if not errors:
