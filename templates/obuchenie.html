@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
-{% block title %}Меню{% endblock %}
+{% block title %}Обучение{% endblock %}
     {% block style %}
     <link rel="stylesheet" href="/media/css/css-index.css">
     {% endblock %}
 {% block container %}
-<div class="container mg-bottom">
-    <div class="text-left">
-        <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ Назад</a>
+    <nav class="navbar navbar-dark bg-dark mrg-bt">
+        <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ артқа</a>
+    </nav>
+    <div class="container mrg-bt pd-bt">
+        <div class="text-center">
+            <a class="btn btn-prmr btn-lg btn-block" href="/mimika">Мимика</a>
+            {% for cg in ctg %}
+            <a class="btn btn-prmr btn-lg btn-block" href="category/{{ cg.id }}">{{ cg.title }}</a>
+            {% endfor %}
+        </div>
     </div>
-</div>
-<div class="container mg-bottom">
-    <div class="text-center">
-        {% for ct in categorys %}
-        <button type="button" class="btn btn-primary6 btn-lg btn-block"><a href="{{ ct.id }}">{{ ct.title }}</a></button>
-        {% endfor %}
-    </div>
-</div>
-<div class="container mg-bottom">
-    <div class="text-center">
-        {% for cg in ctg %}
-        <button type="button" class="btn btn-primary6 btn-lg btn-block"><a href="category/{{ cg.id }}">{{ cg.title }}</a></button>
-        {% endfor %}
-    </div>
-</div>
+    <footer class="footer-section fixed-bottom">
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="/obuchenie">Дайындалу</a></li>
+                            <li><a href="/masterklass">Мастер класс</a></li>
+                            <li><a href="https://ticketon.kz/">Билет алу</a></li>
+                            <li><a href="/contact">Контакттар</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}

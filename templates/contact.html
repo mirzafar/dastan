@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Контакт{% endblock %}
 {% block container %}
-
+<nav class="navbar navbar-dark bg-dark mrg-bt">
+    <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ артқа</a>
+</nav>
     <section class="contact-section spad">
-        <div class="container mg-bottom">
-            <div class="text-left">
-                <a href="/" class="btn-primary1" role="button" aria-pressed="true">❮ Назад</a>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="contact-text">
-                        <h2>Контакты</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <h2>Контакттар</h2>
                         <table>
                             <tbody>
                                 <tr>
@@ -42,15 +37,15 @@
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" name="name" placeholder="Your Name">
+                                <input type="text" name="name" placeholder="Аты Жөні">
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" name="email" placeholder="Your Email">
+                                <input type="text" name="email" placeholder="Email">
                             </div>
                             <div class="col-lg-12">
-                                <textarea name="description" placeholder="Your Message"></textarea>
+                                <textarea name="description" placeholder="Сипаттама"></textarea>
                                 <input type="hidden" name="action" value="send">
-                                <button type="submit">отправить</button>
+                                <button type="submit">жіберу</button>
                             </div>
                         </div>
                     </form>
@@ -65,8 +60,7 @@
                 <div class="row">
                     <div class="col-lg-3 offset-lg-1">
                         <div class="ft-newslatter">
-                            <h6>New latest</h6>
-                            <p>Оставьте свою электронную почту и получите в подарок аудиокнигу.</p>
+                            <p>Электрондық поштаңызды қалдырыңыз және сыйлық ретінде аудиокітап алыңыз.</p>
                             <form action="#" class="fn-form">
                                 <input type="text" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
@@ -84,7 +78,7 @@
                             <li><a href="/obuchenie">Дайындалу</a></li>
                             <li><a href="/masterklass">Мастер класс</a></li>
                             <li><a href="https://ticketon.kz/">Билет алу</a></li>
-                            <li><a href="/contact">Контакты</a></li>
+                            <li><a href="/contact">Контакттар</a></li>
                         </ul>
                     </div>
                 </div>

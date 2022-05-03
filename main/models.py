@@ -15,6 +15,7 @@ class Category(models.Model):
 class Category2(models.Model):
     title = models.CharField(max_length=500, blank=True, verbose_name="Название")
     description = models.TextField(blank=True, verbose_name="Описание")
+    logo = models.ImageField(upload_to='upload', verbose_name="Фото", blank=True)
     status = models.IntegerField(default=0, blank=True, verbose_name="Статус")
 
     class Meta:
@@ -42,6 +43,7 @@ class Grade(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=500, blank=True, verbose_name="Название")
     link_video = models.CharField(max_length=500, blank=True, verbose_name="Ссылка на видео")
+    description = models.TextField(blank=True, verbose_name="Описание", default="")
     status = models.IntegerField(default=0, blank=True, verbose_name="Статус")
 
     class Meta:

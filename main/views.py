@@ -19,6 +19,11 @@ def masterklassHandler(request):
     return render(request, 'masterklass.html', {"videos": videos})
 
 
+def masterklassBlogHandler(request, masterklass_id):
+    posts = Video.objects.get(id=int(masterklass_id))
+    return render(request, 'masterklassblog.html', {"posts": posts})
+
+
 def contactHandler(request):
     infos = Info.objects.all()[0]
     errors = []
@@ -60,12 +65,17 @@ def obuchenieHandler(request):
     return render(request, 'obuchenie.html', {"categorys": categorys, "ctg": ctg})
 
 
-def categoryHandler(request, category_id):
+def mimikaHandler(request):
+    categorys = Category.objects.all()
+    return render(request, 'mimika.html', {"categorys": categorys,})
+
+
+def categoryBlogHandler(request, category_id):
     posts = Category2.objects.get(id=int(category_id))
     return render(request, 'ctg.html', {"posts": posts})
 
 
-def obuchenieIdHandler(request, obuchenie_id):
+def mimikaBlogHandler(request, obuchenie_id):
     posts = Category.objects.get(id=int(obuchenie_id))
 
     b = random.randint(4,5)

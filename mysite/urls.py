@@ -23,11 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', indexHandler),
     path('masterklass/', masterklassHandler),
+    path('masterklass/<int:masterklass_id>', masterklassBlogHandler),
     path('contact/', contactHandler),
     path('obuchenie/', obuchenieHandler),
+    path('mimika/', mimikaHandler),
     path('api/upload/', apiUploadHandler),
-    path('obuchenie/<int:obuchenie_id>', obuchenieIdHandler),
-    path('obuchenie/category/<int:category_id>', categoryHandler),
+    path('mimika/<int:obuchenie_id>', mimikaBlogHandler),
+    path('obuchenie/category/<int:category_id>', categoryBlogHandler),
     re_path(r'^media/(?P<path>.*)$', serve, {
         'document_root': settings.MEDIA_ROOT
     })

@@ -7,7 +7,13 @@
     <nav class="navbar navbar-dark bg-dark mrg-bt">
         <a href="/obuchenie" class="btn-primary2" role="button" aria-pressed="true">❮ Назад</a>
     </nav>
-{{posts.title}}
+    <div class="container mrg-bt pd-bt">
+        <div class="text-center">
+            {% for ct in categorys %}
+            <a class="btn btn-prmr btn-lg btn-block" href="{{ ct.id }}">{{ ct.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
     <footer class="footer-section fixed-bottom">
         <div class="copyright-option">
             <div class="container">
