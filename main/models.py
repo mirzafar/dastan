@@ -80,3 +80,8 @@ class SendMessage(models.Model):
     def __str__(self):
         return self.name
 
+class Mark(models.Model):
+    mark = models.IntegerField(blank=True)
+
+    def __str__(self):
+        return self.mark

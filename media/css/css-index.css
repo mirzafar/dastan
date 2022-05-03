@@ -53,6 +53,23 @@ body{
 .pd-bt{
     padding-bottom: 70px;
 }
+.box1{
+    width: 70%;
+    height: 80px;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background-color:#343a40;
+}
+.box1:hover{
+    background-color: #007bff;
+    cursor: pointer;
+}
+.box1:focus{
+    background-color: darkred;
+    cursor: pointer;
+}
 .btn-primary2{
   padding: 10px 20px;
   background-color: #222736;

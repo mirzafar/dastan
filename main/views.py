@@ -2,14 +2,12 @@ from django.shortcuts import render
 from main.models import *
 from django.http.response import JsonResponse
 import os, uuid
-import random
 import re
 import smtplib as smtp
 from mysite.settings import BASE_DIR
 import base64
 
 
-# Create your views here.
 email_regex = re.compile(r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$')
 def indexHandler(request):
     return render(request, 'index.html',{})
@@ -97,7 +95,25 @@ def obuchenieHandler(request):
 
 def mimikaHandler(request):
     categorys = Category.objects.all()
-    return render(request, 'mimika.html', {"categorys": categorys,})
+    return render(request, 'mimika.html', {"categorys": categorys})
+
+
+def markHandler(request):
+    if request.POST:
+        btn = request.POST.get('btn_val', '')
+        val = Mark.objects.all()
+        if val:
+            vl = Mark.objects.all()[0]
+            vl.mark = btn
+            vl.save()
+            response = JsonResponse({'status': True, 'btn': btn}, status=200)
+        else:
+            vl = Mark()
+            vl.mark = btn
+            vl.save()
+            response = JsonResponse({'status': True, 'btn': btn}, status=200)
+        return response
+    return render(request, 'mark.html', {})
 
 
 def categoryBlogHandler(request, category_id):
@@ -108,24 +124,23 @@ def categoryBlogHandler(request, category_id):
 def mimikaBlogHandler(request, obuchenie_id):
     posts = Category.objects.get(id=int(obuchenie_id))
 
-    b = random.randint(4,5)
-
     errors = []
     if request.POST:
         action = request.POST.get('action', '')
         logo = request.POST.get('logo', '')
         ctg_id = int(request.POST.get('id', 0))
+        fb = Mark.objects.all()[0]
         if action == 'add':
             cc = Grade()
             if logo:
                 cc.photo = logo
             else:
                 errors.append("Logo not found")
-            cc.ball = b
+            cc.ball = fb.mark
             cc.category_id = ctg_id
             if not errors:
                 cc.save()
-                response = JsonResponse({'status': True, 'ball': b}, status=200)
+                response = JsonResponse({'status': True, 'ball': fb.mark}, status=200)
             else:
                 response = JsonResponse({'status': False, 'errors': errors}, status=200)
             return response

@@ -27,6 +27,7 @@ urlpatterns = [
     path('contact/', contactHandler),
     path('obuchenie/', obuchenieHandler),
     path('mimika/', mimikaHandler),
+    path('mark/', markHandler),
     path('api/upload/', apiUploadHandler),
     path('mimika/<int:obuchenie_id>', mimikaBlogHandler),
     path('obuchenie/category/<int:category_id>', categoryBlogHandler),

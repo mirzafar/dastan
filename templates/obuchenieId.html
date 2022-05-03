@@ -189,7 +189,7 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['ball']);
+                     alert(d['ball'] + " ball");
                      location.reload()
                  }else{
                      var errors = d['errors'];

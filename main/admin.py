@@ -19,6 +19,9 @@ class SendMessageAdmin(admin.ModelAdmin):
 class Category2Admin(admin.ModelAdmin):
     pass
 
+class MarkAdmin(admin.ModelAdmin):
+    pass
+
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Category2, Category2Admin)
@@ -26,3 +29,4 @@ admin.site.register(Grade, GradeAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Info, InfoAdmin)
 admin.site.register(SendMessage, SendMessageAdmin)
+admin.site.register(Mark, MarkAdmin)

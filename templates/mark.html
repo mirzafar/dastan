@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/css-index.css">
+    <script src="/media/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container cntnr">
+        <form action="/mark/" id="form41" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="0">
+            <button type="submit" class="box1 mg-bottom">0</button>
+        </form>
+        <form action="/mark/" id="form42" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="1">
+            <button type="submit" class="box1 mg-bottom">1</button>
+        </form>
+        <form action="/mark/" id="form43" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="2">
+            <button type="submit" class="box1 mg-bottom">2</button>
+        </form>
+        <form action="/mark/" id="form44" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="3">
+            <button type="submit" class="box1 mg-bottom">3</button>
+        </form>
+        <form action="/mark/" id="form45" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="4">
+            <button type="submit" class="box1 mg-bottom">4</button>
+        </form>
+        <form action="/mark/" id="form46" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="btn_val" value="5">
+            <button type="submit" class="box1 mg-bottom">5</button>
+        </form>
+    </div>
+<script>
+    $("#form41").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form41").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+    $("#form42").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form42").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+    $("#form43").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form43").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+    $("#form44").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form44").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+    $("#form45").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form45").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+    $("#form46").submit(function (e) {
+        e.preventDefault();
+        var serializedData = $(this).serialize();
+         $.ajax({
+             type: 'POST',
+             dataType: 'json',
+             url: $("#form46").attr("action"),
+             data: serializedData,
+             success: function (d) {
+                 if(d['status']==true){
+                     alert(d['btn']);
+                     location.reload()
+                 }else{
+                     var errors = d['errors'];
+                     alert(errors);
+                 }
+             },
+             error: function (d){
+                 alert(" ");
+             }
+         });
+    });
+</script>
+</body>
+</html>
