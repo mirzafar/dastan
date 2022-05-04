@@ -77,9 +77,9 @@ def contactHandler(request):
 
                 email = 'u5ad44in@yandex.ru'
                 password = '010100Aa#'
-                dest_email = ['m_mirzafar@mail.ru']
+                dest_email = ['dauletadai@bk.ru']
 
-                subject = 'novoe soobshenie'
+                subject = 'SHANYRAQ'
                 email_text = f'description: {sm.description}\n email: {sm.email} '
 
                 message = 'From: {}\nSubject: {}\n\n{}'.format(email, subject, email_text)
