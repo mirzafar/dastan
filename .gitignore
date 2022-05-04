@@ -2,3 +2,5 @@ db.sqlite3
 *.pyc
 main/migrations/*
 media/upload/*
+Pipfile
+Pipfile.lock
