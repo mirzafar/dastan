@@ -28,11 +28,24 @@
 </head>
 
 <body>
+    <div class="js-scf alrt alert alert-success align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+      <div>
+        An example success alert with an icon
+      </div>
+    </div>
+    <div class="js-err alrt alert alert-danger align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        An example danger alert with an iconAn example danger alert with an icon
+      </div>
+    </div>
     {%  block container %}
     {% endblock %}
 
     {% block script %}
     {% endblock %}
+
 
     <script src="/media/js/jquery-3.3.1.min.js"></script>
     <script src="/media/js/bootstrap.min.js"></script>
@@ -43,5 +56,16 @@
     <script src="/media/js/owl.carousel.min.js"></script>
     <script src="/media/js/main.js"></script>
     <script src="/media/js/js-contact.js"></script>
+    <script src="/media/js/js-index.js"></script>
+    <script>
+        function myFunction() {
+            timeout = setTimeout(alertFunc, 4000);
+        }
+
+        function alertFunc() {
+            $('.js-err').css("display","none");
+            $('.js-scf').css("display","none");
+        }
+    </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="text-center">
                     <div style="width: 80%">
-                        <table style="width: 100%">
+                        <table style="width: 100%;" >
                             <tr>
                                 <td></td>
                                 <td><input type="hidden" value="{{ posts.id }}" name="id"></td>
@@ -32,7 +32,7 @@
                                                     <form method="post">
                                                         <label for="upload_image">
                                                             <input type="hidden" name="logo" value="">
-                                                            <img src="/media/images/usr.jpg" id="uploaded_image" class="img-responsive img-circle" />
+                                                            <img src="/media/images/usr.jpg" id="uploaded_image" class="cp-img img-responsive img-circle" />
                                                             <div class="overlay">
                                                                 <div class="text">Добавить</div>
                                                             </div>
@@ -75,7 +75,7 @@
                             </tr>
                             <tr>
                                 <td><input type="hidden" name="action" value="add"></td>
-                                <td><button>Проверить</button></td>
+                                <td style="text-align: center;"><button class="cp-btn">Тексеру</button></td>
                             </tr>
                         </table>
                     </div>
@@ -189,15 +189,23 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['ball'] + " ball");
-                     location.reload()
+                     $('.js-scf').css("display","block");
+                     $('.js-scf').text(d['ball'] + " ball");
+                     myFunction();
+                     $(window).click(function (){
+                        location.reload()
+                     })
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert("не заполнено");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text("не заполнено");
+                 myFunction()
              }
          });
     });

@@ -51,15 +51,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });
@@ -73,15 +76,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });
@@ -95,15 +101,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });
@@ -117,15 +126,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });
@@ -139,15 +151,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });
@@ -161,15 +176,18 @@
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert(d['btn']);
                      location.reload()
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction()
                  }
              },
              error: function (d){
-                 alert(" ");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text(" ");
+                 myFunction()
              }
          });
     });

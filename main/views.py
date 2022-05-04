@@ -6,6 +6,30 @@ import re
 import smtplib as smtp
 from mysite.settings import BASE_DIR
 import base64
+import cv2
+
+def faceId():
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    img = cv2.imread('test.jpg')
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+    cv2.imshow('img', img)
+    cv2.waitKey()
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    cap = cv2.VideoCapture(0)
+    while True:
+        _, img = cap.read()
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+        for (x, y, w, h) in faces:
+            cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        cv2.imshow('img', img)
+        k = cv2.waitKey(30) & 0xff
+        if k == 27:
+            break
+    cap.release()
 
 
 email_regex = re.compile(r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$')
@@ -83,7 +107,6 @@ def contactHandler(request):
             else:
                 response = JsonResponse({'status': False, 'errors': errors}, status=200)
             return response
-
     return render(request, 'contact.html', {"infos": infos, "errors": errors})
 
 

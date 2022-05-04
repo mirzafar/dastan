@@ -15,6 +15,9 @@ class Category(models.Model):
 class Category2(models.Model):
     title = models.CharField(max_length=500, blank=True, verbose_name="Название")
     description = models.TextField(blank=True, verbose_name="Описание")
+    description1 = models.TextField(blank=True, verbose_name="Описание")
+    description2 = models.TextField(blank=True, verbose_name="Описание")
+    description3 = models.TextField(blank=True, verbose_name="Описание")
     logo = models.ImageField(upload_to='upload', verbose_name="Фото", blank=True)
     status = models.IntegerField(default=0, blank=True, verbose_name="Статус")
 
@@ -85,3 +88,13 @@ class Mark(models.Model):
 
     def __str__(self):
         return self.mark
+
+class Pochta(models.Model):
+    email = models.CharField(max_length=500, blank=True, verbose_name="Почта")
+
+    class Meta:
+        verbose_name = "почта"
+        verbose_name_plural = "почта"
+
+    def __str__(self):
+        return self.email

@@ -9,16 +9,24 @@ $(document).ready(function() {
              data: serializedData,
              success: function (d) {
                  if(d['status']==true){
-                     alert("Сатти жиберилди!!!");
-                     location.reload()
+                     $('.js-scf').css("display","block");
+                     $('.js-scf').text("Сатти жиберилди!!!");
+                     myFunction();
+                     $(window).click(function (){
+                        location.reload()
+                     })
                  }else{
                      var errors = d['errors'];
-                     alert(errors);
+                     $('.js-err').css("display","block");
+                     $('.js-err').text(errors);
+                     myFunction();
                  }
              },
              error: function (d){
-                 alert("Агылшынша толдырынгыз");
+                 $('.js-err').css("display","block");
+                 $('.js-err').text("Агылшынша толдырынгыз");
              }
          });
     });
+
 })

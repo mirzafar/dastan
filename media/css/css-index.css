@@ -35,6 +35,9 @@ body{
 .mrg-tp{
     margin-top: 30px;
 }
+.mrg-lf{
+    margin-left: 30px;
+}
 .btn-primary6{
     color: #fff;
     border-color: #007bff;
@@ -85,4 +88,25 @@ body{
     color: #0b0b0b;
     font-size: 20px;
     font-weight: bold;
+}
+
+.alrt{
+    position: absolute;
+    top: 2%;
+    left: 28%;
+    width: 50%;
+    z-index: 1111111111;
+    text-align: center;
+    display: none;
+}
+.cp-img{
+    border-radius: 50%;
+}
+.cp-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #1b6d85;
+    color: white;
 }
