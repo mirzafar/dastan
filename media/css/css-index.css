@@ -15,16 +15,28 @@ body{
     border-color: #007bff;
 }
 .btn-prmr{
-    color: #007bff;
-    border-color: #007bff;
+    color: #343a40;
+    border: none;
 }
-.btn-prmr:hover{
+.bg-mmk{
+    border: 1px solid #ffc107;
+    color: #ff8800;
+    font-size: 25px;
+    line-height: 80px;
+    height: 100px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-prmr:active{
     color: #fff;
-    background-color: #007bffe0;
-    border-color: #007bff;
+    background-color: #ffc107;
+    border-color: #ffc107;
     opacity: 0.7;
 }
 .txt-p{
+    color: #ffc107b0;
     font-size: 25px;
     font-family: Verdana;
     line-height: 40px;
@@ -75,7 +87,6 @@ body{
 }
 .btn-primary2{
   padding: 10px 20px;
-  background-color: #222736;
   color: white;
   border-radius: 5px;
 }

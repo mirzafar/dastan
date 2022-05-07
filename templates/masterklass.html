@@ -8,13 +8,13 @@
 <nav class="navbar navbar-dark bg-dark mrg-bt">
     <a href="/" class="btn-primary2" role="button" aria-pressed="true">❮ артқа</a>
 </nav>
-<div class="pd-bt">
+<div class="">
     {% for vd in videos %}
     <div class="container mg-bottom">
         <div class="text-center">
             <div style="width: 90%; display: inline-flex; flex-direction: column;">
                 <iframe width="100%" height="200px" src="https://www.youtube.com/embed/{{ vd.link_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="" style="width: 100%; background: #A9A9A9;padding-top: 10px;">
+                <div class="" style="width: 100%;padding-top: 10px;">
                     <p class="text-center v-p"><a href="{{ vd.id }}">{{ vd.title }}</a></p>
                 </div>
             </div>
@@ -22,14 +22,13 @@
     </div>
     {% endfor %}
 </div>
-<footer class="footer-section fixed-bottom">
+<footer class="footer-section">
     <div class="copyright-option">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <ul>
                         <li><a href="/obuchenie">Дайындалу</a></li>
-                        <li><a href="/masterklass">Мастер класс</a></li>
                         <li><a href="https://ticketon.kz/">Билет алу</a></li>
                         <li><a href="/contact">Контакттар</a></li>
                     </ul>

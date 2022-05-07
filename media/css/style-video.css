@@ -5,8 +5,8 @@ body{
 .mg-bottom{
   margin-bottom: 15px;
 }
-.v-p{
-
+.v-p a{
+  color: #343a40;
 }
 .btn-primary1{
   padding: 10px 20px;

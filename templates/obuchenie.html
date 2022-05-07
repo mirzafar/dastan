@@ -9,9 +9,9 @@
     </nav>
     <div class="container mrg-bt pd-bt">
         <div class="text-center">
-            <a class="btn btn-prmr btn-lg btn-block" href="/mimika">Мимика</a>
+            <a class="btn btn-prmr bg-mmk btn-lg btn-block" style="background-image: url('/media/images/mimika.png')" href="/mimika">Мимика</a>
             {% for cg in ctg %}
-            <a class="btn btn-prmr btn-lg btn-block" href="category/{{ cg.id }}">{{ cg.title }}</a>
+            <a class="btn btn-prmr bg-mmk btn-lg btn-block" {% if cg.icon %} style="background-image: url('/media/{{ cg.icon }}')"{% endif %} href="category/{{ cg.id }}">{{ cg.title }}</a>
             {% endfor %}
         </div>
     </div>
@@ -21,7 +21,6 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <ul>
-                            <li><a href="/obuchenie">Дайындалу</a></li>
                             <li><a href="/masterklass">Мастер класс</a></li>
                             <li><a href="https://ticketon.kz/">Билет алу</a></li>
                             <li><a href="/contact">Контакттар</a></li>
