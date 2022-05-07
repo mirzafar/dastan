@@ -121,3 +121,12 @@ body{
     background-color: #1b6d85;
     color: white;
 }
+.bg-bl{
+    background: #002852;
+}
+.ft-a{
+    color: #e9ecef;
+}
+.footer-section .copyright-option .container .row .col-lg-7 ul li a{
+    color: #e9ecef;
+}
