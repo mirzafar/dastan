@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class Category2(models.Model):
     title = models.CharField(max_length=500, blank=True, verbose_name="Название")
-    icon = models.ImageField(upload_to='upload', verbose_name="Фото", blank=True)
+    icon = models.ImageField(upload_to='upload', verbose_name="Икон", blank=True)
     description = models.TextField(blank=True, verbose_name="Описание")
     description1 = models.TextField(blank=True, verbose_name="Описание")
     description2 = models.TextField(blank=True, verbose_name="Описание")
